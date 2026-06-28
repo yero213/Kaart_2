@@ -311,11 +311,6 @@ class Game:
                 return False
 
     def checkHoogsteContract(self, c: Contract):
-        if len(self.contracten) != 0:
-            for i in  range(len(self.contracten)):
-                if c.get_prioriteit(self.contracten[i].getTroefKleur(), self.contracten[i].getDoelslagen()):
-                    return True
-                else:
-                    return False
-        else:
+        if not self.contracten:
             return True
+        return c.get_waarde() > max(ex.get_waarde() for ex in self.contracten)

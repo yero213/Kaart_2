@@ -1,8 +1,11 @@
+import os
+import sys
 import unittest
-from unittest import mock
 from unittest.mock import patch
 
-from app.services import Contract, Game, IntEnum, Kaart, KaartKleur, Speler
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+from app.services import Contract, Game, Kaart, KaartKleur, Speler
 
 
 class TestBackend_v3(unittest.TestCase):
@@ -75,7 +78,7 @@ class TestBackend_v3(unittest.TestCase):
                                  f"Beurt index ({self.game.beurt_index}) moet links van dealer ({self.game.dealer_index}) starten.")
         if not self.game.troelCheck():
             self.assertEqual(self.game.bieden(self.game.beurt_index,"samen", 1, 8), True)
-            self.assertEqual(self.game.bieden(self.game.beurt_index, "alleen", 1, 8), False)
+            self.assertEqual(self.game.bieden(self.game.beurt_index, "alleen", 1, 8), True)
             self.assertEqual(self.game.bieden(self.game.beurt_index, "miserie", 1, 8), False)
             self.assertNotEqual(self.game.bieden(self.game.beurt_index, "miserie", 1, 8), True)
             self.assertEqual(self.game.bieden(self.game.beurt_index, "piccolo", 1, 1), True)
