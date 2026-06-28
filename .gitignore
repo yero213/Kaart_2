@@ -1,0 +1,24 @@
+# Virtuele omgeving
+env/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Frontend dependencies & builds
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# Omgevingsvariabelen / Secrets
+.env
+.env.local
+
+# IDE mappen
+.vscode/
+.idea/
