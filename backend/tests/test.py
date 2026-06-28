@@ -8,7 +8,7 @@ from app.services import Contract, Game, IntEnum, Kaart, KaartKleur, Speler
 class TestBackend_v3(unittest.TestCase):
     def setUp(self):
         self.spelernamen = ["Alice", "Bob", "Charlie", "David"]
-        self.game = backend_v3.Game(self.spelernamen)
+        self.game = Game(self.spelernamen)
 
     def test_init(self):
             self.assertEqual(len(self.game.spelers), 4)
