@@ -33,5 +33,6 @@ jobs:
       # 4. Voer de testsuite uit met pytest
       - name: Run Tests met Pytest
         run: |
+          pytest backend/tests/
           # We vertellen Python expliciet waar de app-map staat om import-fouten te voorkomen
           PYTHONPATH=backend pytest backend/tests/
